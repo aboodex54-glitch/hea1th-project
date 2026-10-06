@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مستكشف الفضاء</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- شاشة التحميل -->
+  <section id="loadingPage" class="page active">
+    <div class="loading-box">
+      <div class="loader"></div>
+      <h1>🚀 مستكشف الفضاء</h1>
+      <p>جاري تجهيز الرحلة...</p>
+    </div>
+  </section>
+
+  <!-- شاشة الدخول -->
+  <section id="startPage" class="page">
+    <div class="start-box">
+      <div class="big-rocket">🚀</div>
+      <h1>مستكشف الفضاء</h1>
+      <p>استعد لرحلة بين الكواكب والنجوم!</p>
+      <button id="startButton">🚀 دخول</button>
+    </div>
+  </section>
+
+  <!-- استكشاف الفضاء -->
+  <section id="planetsPage" class="page">
+
+    <div class="top-title">
+      <h1>🌌 استكشاف الفضاء</h1>
+      <p>اضغط على أي جسم فضائي لمعرفة معلومات عنه</p>
+    </div>
+
+    <div class="space-grid">
+
+      <!-- الشمس -->
+      <div class="space-card sun-card" data-space="sun">
+        <div class="planet sun"></div>
+        <h2>الشمس</h2>
+      </div>
+
+      <!-- عطارد -->
+      <div class="space-card" data-space="mercury">
+        <div class="planet mercury"></div>
+        <h2>عطارد</h2>
+      </div>
+
+      <!-- الزهرة -->
+      <div class="space-card" data-space="venus">
+        <div class="planet venus"></div>
+        <h2>الزهرة</h2>
+      </div>
+
+      <!-- الأرض -->
+      <div class="space-card" data-space="earth">
+        <div class="planet earth">
+          <span class="land land1"></span>
+          <span class="land land2"></span>
+          <span class="land land3"></span>
+        </div>
+        <h2>الأرض</h2>
+      </div>
+
+      <!-- المريخ -->
+      <div class="space-card" data-space="mars">
+        <div class="planet mars"></div>
+        <h2>المريخ</h2>
+      </div>
+
+      <!-- المشتري -->
+      <div class="space-card" data-space="jupiter">
+        <div class="planet jupiter">
+          <span class="jupiter-line line1"></span>
+          <span class="jupiter-line line2"></span>
+          <span class="jupiter-line line3"></span>
+          <span class="jupiter-spot"></span>
+        </div>
+        <h2>المشتري</h2>
+      </div>
+
+      <!-- زحل -->
+      <div class="space-card" data-space="saturn">
+        <div class="saturn-wrap">
+          <div class="saturn-ring ring-back"></div>
+          <div class="planet saturn"></div>
+          <div class="saturn-ring ring-front"></div>
+        </div>
+        <h2>زحل</h2>
+      </div>
+
+      <!-- أورانوس -->
+      <div class="space-card" data-space="uranus">
+        <div class="uranus-wrap">
+          <div class="uranus-ring"></div>
+          <div class="planet uranus"></div>
+        </div>
+        <h2>أورانوس</h2>
+      </div>
+
+      <!-- نبتون -->
+      <div class="space-card" data-space="neptune">
+        <div class="planet neptune"></div>
+        <h2>نبتون</h2>
+      </div>
+
+      <!-- القمر -->
+      <div class="space-card" data-space="moon">
+        <div class="planet moon"></div>
+        <h2>القمر</h2>
+      </div>
+
+      <!-- النجم -->
+      <div class="space-card" data-space="star">
+        <div class="space-icon">⭐</div>
+        <h2>النجم</h2>
+      </div>
+
+      <!-- الشهاب -->
+      <div class="space-card" data-space="meteor">
+        <div class="space-icon">☄️</div>
+        <h2>الشهاب</h2>
+      </div>
+
+      <!-- النيزك -->
+      <div class="space-card" data-space="asteroidMeteor">
+        <div class="space-icon">🪨</div>
+        <h2>النيزك</h2>
+      </div>
+
+      <!-- المذنب -->
+      <div class="space-card" data-space="comet">
+        <div class="space-icon">☄️</div>
+        <h2>المذنب</h2>
+      </div>
+
+      <!-- درب التبانة -->
+      <div class="space-card" data-space="milkyway">
+        <div class="space-icon galaxy">🌌</div>
+        <h2>درب التبانة</h2>
+      </div>
+
+      <!-- الثقب الأسود -->
+      <div class="space-card" data-space="blackhole">
+        <div class="black-hole"></div>
+        <h2>الثقب الأسود</h2>
+      </div>
+
+      <!-- الكويكب -->
+      <div class="space-card" data-space="asteroid">
+        <div class="space-icon">🪨</div>
+        <h2>الكويكب</h2>
+      </div>
+
+    </div>
+
+    <!-- الاختبار واللعبة -->
+    <div class="bottom-actions">
+      <button id="quizButton">🧠 الاختبار</button>
+      <button id="gameButton">🎮 اللعبة</button>
+    </div>
+
+  </section>
+
+  <!-- صفحة الاختبار -->
+  <section id="quizPage" class="page">
+
+    <div class="quiz-box">
+
+      <div class="quiz-top">
+        <span id="questionNumber">السؤال 1 من 10</span>
+        <span id="quizScore">النقاط: 0</span>
+      </div>
+
+      <h1 id="questionText">السؤال</h1>
+
+      <div id="answersContainer" class="answers"></div>
+
+    </div>
+
+  </section>
+
+  <!-- النتيجة -->
+  <section id="resultPage" class="page">
+
+    <div class="result-box">
+      <h1>🎉 انتهى الاختبار!</h1>
+
+      <div id="finalScore"></div>
+      <p id="resultMessage"></p>
+
+      <div class="result-buttons">
+        <button id="retryQuiz">🔄 إعادة الاختبار</button>
+        <button id="homeFromQuiz">🏠 الرئيسية</button>
+        <button id="aiButton">🤖 اسأل الذكاء الاصطناعي</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- الذكاء الاصطناعي -->
+  <section id="aiPage" class="page">
+
+    <div class="ai-box">
+      <h1>🤖 مساعد الفضاء</h1>
+
+      <p>
+        اسأل عن الكواكب أو الشمس أو القمر أو أي شيء عن الفضاء.
+      </p>
+
+      <textarea
+        id="aiInput"
+        placeholder="اكتب سؤالك هنا..."
+      ></textarea>
+
+      <button id="askAI">إرسال 🚀</button>
+
+      <div id="aiAnswer"></div>
+
+      <button id="backFromAI">🏠 العودة</button>
+    </div>
+
+  </section>
+
+  <!-- اللعبة -->
+  <section id="gamePage" class="page">
+
+    <div class="game-header">
+      <h1 id="stageTitle">🎮 المرحلة الأولى</h1>
+
+      <div class="game-stats">
+        <span>النقاط: <b id="gameScore">0</b></span>
+        <span>الوقت: <b id="gameTime">30</b></span>
+      </div>
+    </div>
+
+    <div id="countdown" class="countdown"></div>
+
+    <div id="gameArea" class="game-area"></div>
+
+    <div class="game-controls">
+      <button id="leftButton">⬅️</button>
+      <button id="rightButton">➡️</button>
+    </div>
+
+  </section>
+
+  <!-- نتيجة اللعبة -->
+  <section id="gameResultPage" class="page">
+
+    <div class="result-box">
+      <h1>🏆 انتهت الرحلة!</h1>
+
+      <div class="game-final-score">
+        <span>مجموع نقاطك</span>
+        <strong id="gameFinalScore">0</strong>
+        <small>/ 100</small>
+      </div>
+
+      <p id="gameResultMessage"></p>
+
+      <button id="restartGame">🔄 لعب مرة ثانية</button>
+      <button id="homeFromGame">🏠 الرئيسية</button>
+    </div>
+
+  </section>
+
+  <!-- نافذة المعلومات -->
+  <div id="infoModal" class="modal">
+
+    <div class="modal-content">
+
+      <button id="closeModal" class="close-modal">×</button>
+
+      <div id="modalIcon"></div>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+
+      <div id="modalExtra"></div>
+
+    </div>
+
+  </div>
+
+  <audio id="backgroundMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
